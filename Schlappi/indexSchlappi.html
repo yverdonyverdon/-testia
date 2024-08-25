@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js Foto met 3D Object</title>
+    <style>
+        body, html { margin: 0; height: 100%; overflow: hidden; }
+        #uploadContainer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        #info { position: absolute; top: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <div id="uploadContainer">
+        <img src="img/logo-schlappi.svg" border="0"><br/><br/>
+        <input type="file" id="imageUpload" accept="image/*"><br>
+        <button id="uploadButton">Upload en Start</button>
+    </div>
+    <div id="info" style="display:none;">
+        <pre>
+ ------------------------------------------------------------------
+| TOETS                | EFFECT                                    |
+ ------------------------------------------------------------------
+| &ShortUpArrow;                     | Object naar boven verplaatsen            |
+| &ShortDownArrow;                     | Object naar beneden verplaatsen          |
+| &ShortLeftArrow;                     | Object naar links verplaatsen            |
+| &ShortRightArrow;                     | Object naar rechts verplaatsen           |
+| c                     | Object kopieren                          |
+| v                     | Object plakken                           |
+| s                     | Switch tussen objecten                   |
+| +                     | Object groter maken                      |
+| -                     | Object kleiner maken                     |
+| w                     | Object smaller maken                     |
+| W                     | Object breder maken                      |
+| p                     | Huidige beeld exporteren naar afbeelding |
+| Scrollwiel            | Camera in -en uitzoomen                  |
+| Muis klik en draaien  | Camera verplaatsen                       |
+| l                     | Lichtinval veranderen                    |
+| L                     | Alle lichten aanzetten                   |
+ ------------------------------------------------------------------
+</pre>
+    </div>
+    <div id="zoomControls" style="position: fixed; top: 10px; right: 10px; background: white; padding: 10px; display:none;">
+        <button id="zoomIn">Zoom In</button>
+        <button id="zoomOut">Zoom Out</button>
+        <input type="text" id="zoomPercent" placeholder="100%" style="width: 60px;">
+        <button id="zoomReset">OK</button>
+    </div>
+    <div id="canvasContainer" style="display: none;">
+        <!-- Three.js canvas zal hier worden toegevoegd door de init functie -->
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+            }
+        }
+    </script>    
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
